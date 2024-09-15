@@ -1,0 +1,26 @@
+how to run mysql in docker:
+
+docker container run -d --name mysqldb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password mysql:latest
+
+docker exec -it mysqldb bash
+
+mysql -u root -ppassword
+
+show databases;
+
+create database company;
+
+drop database company;
+
+use company;
+
+create table team ( id int not null, name text, primary key (id) );
+
+
+Summary
+Start a MySQL Docker Container: You use the docker container run command to start a new container running MySQL,
+exposing it on port 3306 and setting the root password. Here mysqldb is container name
+
+Access the Container: The docker exec command lets you open a Bash shell inside the running MySQL container, enabling you to interact with the container’s file system and run commands.
+
+Connect to MySQL: Using the mysql command, you connect to the MySQL server running inside the container, using the root username and the password you set earlier.
